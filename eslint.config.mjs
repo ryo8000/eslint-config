@@ -4,7 +4,7 @@ export default typescriptEslint.config(
   ...typescriptEslint.configs.strictTypeChecked,
   ...typescriptEslint.configs.stylisticTypeChecked,
   {
-    files: ["**/*.ts"],
+    files: ["**/*.ts", "**/*.mts", "**/*.cts"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
