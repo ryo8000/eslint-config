@@ -31,11 +31,11 @@ Rules explicitly configured on top of the presets.
 |---|---|---|
 | `class-methods-use-this` | error | Enforces converting class methods that don't use `this` to static methods |
 | `consistent-type-exports` | fixMixedExportsWithInlineTypeSpecifier: true | Requires `export type` for type-only exports; mixed exports are fixed with inline type specifiers |
-| `consistent-type-imports` | fixStyle: "separate-type-imports" | Requires the `type` keyword on type-only imports; auto-fix uses top-level `import type { Foo }` form |
+| `consistent-type-imports` | fixStyle: separate-type-imports | Requires the `type` keyword on type-only imports; auto-fix uses top-level `import type { Foo }` form |
 | `default-param-last` | error | Requires default parameters to be placed last in the parameter list |
-| `explicit-member-accessibility` | accessibility: "no-public" | Requires explicit accessibility modifiers; `public` is omitted as redundant |
+| `explicit-member-accessibility` | accessibility: no-public | Requires explicit accessibility modifiers; `public` is omitted as redundant |
 | `member-ordering` | error | Enforces a consistent ordering of class members (static before instance, fields before constructor before methods, etc.) |
-| `method-signature-style` | "property" | Requires interface method signatures to use property style: `method: () => void` |
+| `method-signature-style` | property | Requires interface method signatures to use property style: `method: () => void` |
 | `naming-convention` | multiple selectors | Enforces naming conventions: catch-all default → camelCase / types → PascalCase / enum members → PascalCase or UPPER_CASE / imports → camelCase or PascalCase / variables and parameters → camelCase (leading `_` allowed) / global const variables → camelCase or UPPER_CASE / quoted names (requiresQuotes) → unrestricted |
 | `no-import-type-side-effects` | error | Disallows `import { type Foo, type Bar }` (all-type inline imports) and requires `import type { Foo, Bar }` instead, so transpilers that don't understand the inline `type` keyword will still elide the entire import |
 | `no-loop-func` | error | Disallows function declarations inside loops that close over loop variables |
@@ -51,7 +51,7 @@ Rules explicitly configured on top of the presets.
 | `prefer-readonly` | error | Requires class properties that are never reassigned to be marked `readonly` |
 | `promise-function-async` | error | Requires any function that returns a Promise to be declared `async` |
 | `require-array-sort-compare` | ignoreStringArrays: true | Requires a comparison function to be passed to `Array.sort()`; string arrays are exempt |
-| `return-await` | "always" | Requires `return await promise` in async functions for better stack traces and reliable `try/catch` error handling |
+| `return-await` | always | Requires `return await promise` in async functions for better stack traces and reliable `try/catch` error handling |
 | `strict-void-return` | allowReturnAny: false | Disallows returning a value from a function typed to return `void`; `any` is also disallowed |
 | `switch-exhaustiveness-check` | allowDefaultCaseForExhaustiveSwitch: false, considerDefaultExhaustiveForUnions: false, requireDefaultForNonUnion: true | Requires exhaustive switch coverage; union types must handle all variants explicitly (no `default` shortcut allowed), and non-union types must have a `default` |
 
@@ -66,11 +66,11 @@ Rules explicitly configured on top of the presets.
 | `eqeqeq` | always, null exempted | Requires `===`; `==` is only allowed for `null` comparisons |
 | `grouped-accessor-pairs` | error | Requires getter and setter pairs to be defined adjacent to each other |
 | `guard-for-in` | error | Requires a `hasOwnProperty` check (or similar) inside `for...in` loops |
-| `logical-assignment-operators` | "always" | Requires logical assignment operators (`\|\|=`, `&&=`, `??=`) instead of `a = a \|\| b` |
+| `logical-assignment-operators` | always | Requires logical assignment operators (`\|\|=`, `&&=`, `??=`) instead of `a = a \|\| b` |
 | `new-cap` | newIsCap: true, capIsNew: false, properties: true | Requires constructor functions called with `new` to start with a capital letter; calling capitalized functions without `new` is allowed; also checks property accessors |
 | `no-await-in-loop` | error | Disallows `await` inside loops; use `Promise.all` instead |
 | `no-caller` | error | Disallows `arguments.caller` and `arguments.callee` |
-| `no-cond-assign` | "always" | Disallows all assignments in conditional expressions |
+| `no-cond-assign` | always | Disallows all assignments in conditional expressions |
 | `no-constructor-return` | error | Disallows returning a value from constructors; bare `return;` for early exit is allowed |
 | `no-duplicate-imports` | allowSeparateTypeImports: true | Disallows duplicate imports from the same module; separate type imports are allowed |
 | `no-else-return` | allowElseIf: false | Disallows `else` / `else if` blocks after an `if` block that ends with `return` |
@@ -95,7 +95,7 @@ Rules explicitly configured on top of the presets.
 | `no-restricted-globals` | `isFinite`, `isNaN` | Disallows the global `isFinite` and `isNaN`; use `Number.isFinite` and `Number.isNaN` instead |
 | `no-restricted-properties` | `isFinite`, `isNaN`, `__defineGetter__`, etc. | Disallows specific property accesses: global `isFinite`/`isNaN` and deprecated `__defineGetter__` etc. |
 | `no-restricted-syntax` | `const enum`, `TSExportAssignment` | Disallows `const enum` (bundler incompatibility) and `export =` (CommonJS style) |
-| `no-return-assign` | "always" | Disallows all assignments inside `return` statements |
+| `no-return-assign` | always | Disallows all assignments inside `return` statements |
 | `no-self-compare` | error | Disallows comparing a value to itself (`x === x`) |
 | `no-sequences` | error | Disallows the comma operator (`a, b`) |
 | `no-template-curly-in-string` | error | Disallows `${var}` inside regular strings; use template literals instead |
@@ -110,11 +110,11 @@ Rules explicitly configured on top of the presets.
 | `no-useless-concat` | error | Disallows concatenation of string literals that could be merged |
 | `no-useless-rename` | error | Disallows renaming imports/exports to the same name (`import { a as a }`) |
 | `no-useless-return` | error | Disallows unnecessary `return;` at the end of a function |
-| `object-shorthand` | "always" | Requires object shorthand: `{ x }` instead of `{ x: x }` |
-| `one-var` | initialized: "never" | Requires one declaration per initialized variable (`let a = 1, b = 2` is disallowed) |
-| `operator-assignment` | "always" | Requires compound assignment operators: `x += 1` instead of `x = x + 1` |
+| `object-shorthand` | always | Requires object shorthand: `{ x }` instead of `{ x: x }` |
+| `one-var` | initialized: never | Requires one declaration per initialized variable (`let a = 1, b = 2` is disallowed) |
+| `operator-assignment` | always | Requires compound assignment operators: `x += 1` instead of `x = x + 1` |
 | `prefer-arrow-callback` | error | Requires arrow functions for callbacks |
-| `prefer-const` | destructuring: "all" | Requires `const` for variables that are never reassigned; destructuring requires all variables to be non-reassigned |
+| `prefer-const` | destructuring: all | Requires `const` for variables that are never reassigned; destructuring requires all variables to be non-reassigned |
 | `prefer-exponentiation-operator` | error | Requires `x ** y` instead of `Math.pow(x, y)` |
 | `prefer-numeric-literals` | error | Requires numeric literals (`0b11`) instead of `parseInt('0b11', 2)` |
 | `prefer-object-has-own` | error | Requires `Object.hasOwn(obj, key)` instead of `Object.prototype.hasOwnProperty.call(obj, key)` |
