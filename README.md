@@ -7,7 +7,6 @@ Built on top of [`typescript-eslint`](https://typescript-eslint.io/) `strictType
 ## Requirements
 
 - ESLint >= 10.0.0
-- TypeScript >= 6.0.0
 - typescript-eslint >= 8.0.0
 
 
